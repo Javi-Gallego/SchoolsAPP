@@ -10,7 +10,7 @@ const app:Application = express()
 app.use(express.json())
 
 app.get("/API/healthy", (req, res) => {
-    res.send("Server is healthy")
+    res.send("Server is healthy and running!")
 })
 
 const startServer = () => {
