@@ -1,17 +1,9 @@
 
-import express, { Application } from 'express'
 import 'dotenv/config'
-import { AppDataSource } from './db'
+import { app } from './app'
+import { AppDataSource } from './database/db'
 
 const PORT = process.env.PORT || 4001
-
-const app:Application = express()
-
-app.use(express.json())
-
-app.get("/API/healthy", (req, res) => {
-    res.send("Server is healthy and running!")
-})
 
 const startServer = () => {
     AppDataSource.initialize()
