@@ -1,9 +1,8 @@
+import { Router } from "express";
 
-import { Router } from 'express'
-
-const router = Router()
+const router = Router();
 
 // router.post("/register", register)
 // router.post("/login", login)
 
-export default router
+export default router;
