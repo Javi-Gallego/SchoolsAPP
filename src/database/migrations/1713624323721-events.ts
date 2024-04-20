@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Staff1713460347304 implements MigrationInterface {
+export class Events1713624323721 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "staff",
+        name: "events",
         columns: [
           {
             name: "id",
@@ -14,57 +14,51 @@ export class Staff1713460347304 implements MigrationInterface {
             generationStrategy: "increment",
           },
           {
-            name: "first_name",
+            name: "title",
             type: "varchar",
             length: "40",
             isNullable: false,
           },
           {
-            name: "last_name",
+            name: "start",
+            type: "date",
+            length: "40",
+            isNullable: false,
+          },
+          {
+            name: "end",
+            type: "date",
+            length: "40",
+            isNullable: false,
+          },
+          {
+            name: "message",
             type: "varchar",
             length: "40",
             isNullable: false,
           },
           {
-            name: "second_last_name",
-            type: "varchar",
-            length: "40",
-            isNullable: false,
-          },
-          {
-            name: "phone",
+            name: "publisher_id",
             type: "int",
-            isUnique: true,
-            isNullable: false,
-          },
-          {
-            name: "email",
-            type: "varchar",
-            length: "40",
-            isUnique: true,
-            isNullable: false,
-          },
-          {
-            name: "password_hash",
-            type: "varchar",
-            length: "255",
-            isNullable: false,
-          },
-          {
-            name: "profile_photo",
-            type: "varchar",
-            length: "255",
-            isNullable: false,
-          },
-          {
-            name: "role",
-            type: "varchar",
             length: "40",
             isNullable: false,
+          },
+          {
+            name: "stage_id",
+            type: "int",
+            length: "40",
+            isNullable: true,
+          },
+          {
+            name: "course_id",
+            type: "int",
+            length: "40",
+            isNullable: true,
           },
           {
             name: "school_id",
             type: "int",
+            length: "40",
             isNullable: false,
           },
           {
@@ -81,6 +75,24 @@ export class Staff1713460347304 implements MigrationInterface {
         ],
         foreignKeys: [
           {
+            columnNames: ["publisher_id"],
+            referencedTableName: "users",
+            referencedColumnNames: ["id"],
+            onDelete: "CASCADE",
+          },
+          {
+            columnNames: ["stage_id"],
+            referencedTableName: "stages",
+            referencedColumnNames: ["id"],
+            onDelete: "CASCADE",
+          },
+          {
+            columnNames: ["course_id"],
+            referencedTableName: "courses",
+            referencedColumnNames: ["id"],
+            onDelete: "CASCADE",
+          },
+          {
             columnNames: ["school_id"],
             referencedTableName: "schools",
             referencedColumnNames: ["id"],
@@ -93,6 +105,6 @@ export class Staff1713460347304 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("staff");
+    await queryRunner.dropTable("events");
   }
 }

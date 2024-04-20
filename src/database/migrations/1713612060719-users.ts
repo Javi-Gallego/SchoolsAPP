@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Students1713465195173 implements MigrationInterface {
+export class Users1713612060719 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "students",
+        name: "users",
         columns: [
           {
             name: "id",
@@ -32,6 +32,24 @@ export class Students1713465195173 implements MigrationInterface {
             isNullable: false,
           },
           {
+            name: "birthday",
+            type: "date",
+            isNullable: false,
+          },
+          {
+            name: "phone",
+            type: "int",
+            isUnique: true,
+            isNullable: true,
+          },
+          {
+            name: "email",
+            type: "varchar",
+            length: "40",
+            isUnique: true,
+            isNullable: false,
+          },
+          {
             name: "password_hash",
             type: "varchar",
             length: "255",
@@ -44,20 +62,15 @@ export class Students1713465195173 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: "school_id",
+            name: "role_id",
             type: "varchar",
             length: "40",
             isNullable: false,
           },
           {
-            name: "course_id",
+            name: "school_id",
             type: "int",
-            isNullable: true,
-          },
-          {
-            name: "is_active",
-            type: "boolean",
-            default: true,
+            isNullable: false,
           },
           {
             name: "created_at",
@@ -79,8 +92,8 @@ export class Students1713465195173 implements MigrationInterface {
             onDelete: "CASCADE",
           },
           {
-            columnNames: ["course_id"],
-            referencedTableName: "courses",
+            columnNames: ["role_id"],
+            referencedTableName: "roles",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
           },
@@ -91,6 +104,6 @@ export class Students1713465195173 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("students");
+    await queryRunner.dropTable("users");
   }
 }

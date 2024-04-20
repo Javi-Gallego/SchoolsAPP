@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Courses1713462257507 implements MigrationInterface {
+export class Messages1713628669180 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "courses",
+        name: "messages",
         columns: [
           {
             name: "id",
@@ -14,32 +14,22 @@ export class Courses1713462257507 implements MigrationInterface {
             generationStrategy: "increment",
           },
           {
-            name: "name",
-            type: "varchar",
-            length: "40",
-            isNullable: true,
-          },
-          {
-            name: "stage",
+            name: "message",
             type: "varchar",
             length: "40",
             isNullable: false,
           },
           {
-            name: "year",
+            name: "author_id",
             type: "int",
-            isNullable: false,
-          },
-          {
-            name: "school_id",
-            type: "varchar",
             length: "40",
             isNullable: false,
           },
           {
-            name: "tutor_id",
+            name: "receiver_id",
             type: "int",
-            isNullable: true,
+            length: "40",
+            isNullable: false,
           },
           {
             name: "created_at",
@@ -55,14 +45,20 @@ export class Courses1713462257507 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            columnNames: ["school_id"],
-            referencedTableName: "schools",
+            columnNames: ["author_id"],
+            referencedTableName: "users",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
           },
           {
-            columnNames: ["tutor_id"],
-            referencedTableName: "staff",
+            columnNames: ["receiver_id"],
+            referencedTableName: "users",
+            referencedColumnNames: ["id"],
+            onDelete: "CASCADE",
+          },
+          {
+            columnNames: ["school_id"],
+            referencedTableName: "schools",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
           },
@@ -73,6 +69,6 @@ export class Courses1713462257507 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("courses");
+    await queryRunner.dropTable("messages");
   }
 }

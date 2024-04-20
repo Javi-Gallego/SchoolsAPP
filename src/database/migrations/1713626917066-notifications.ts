@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Parents1713468388570 implements MigrationInterface {
+export class Notifications1713626917066 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "parents",
+        name: "notifications",
         columns: [
           {
             name: "id",
@@ -14,45 +14,45 @@ export class Parents1713468388570 implements MigrationInterface {
             generationStrategy: "increment",
           },
           {
-            name: "first_name",
+            name: "title",
             type: "varchar",
             length: "40",
             isNullable: false,
           },
           {
-            name: "last_name",
+            name: "date",
             type: "varchar",
             length: "40",
             isNullable: false,
           },
           {
-            name: "second_last_name",
+            name: "message",
             type: "varchar",
             length: "40",
             isNullable: false,
           },
           {
-            name: "password_hash",
-            type: "varchar",
-            length: "255",
-            isNullable: false,
-          },
-          {
-            name: "profile_photo",
-            type: "varchar",
-            length: "255",
-            isNullable: false,
-          },
-          {
-            name: "phone",
+            name: "publisher_id",
             type: "int",
+            length: "40",
             isNullable: false,
           },
           {
-            name: "email",
-            type: "varchar",
+            name: "stage_id",
+            type: "int",
             length: "40",
-            isUnique: true,
+            isNullable: true,
+          },
+          {
+            name: "course_id",
+            type: "int",
+            length: "40",
+            isNullable: false,
+          },
+          {
+            name: "school_id",
+            type: "int",
+            length: "40",
             isNullable: false,
           },
           {
@@ -67,12 +67,38 @@ export class Parents1713468388570 implements MigrationInterface {
             onUpdate: "now()",
           },
         ],
+        foreignKeys: [
+          {
+            columnNames: ["pusblisher_id"],
+            referencedTableName: "users",
+            referencedColumnNames: ["id"],
+            onDelete: "CASCADE",
+          },
+          {
+            columnNames: ["stage_id"],
+            referencedTableName: "stages",
+            referencedColumnNames: ["id"],
+            onDelete: "CASCADE",
+          },
+          {
+            columnNames: ["course_id"],
+            referencedTableName: "courses",
+            referencedColumnNames: ["id"],
+            onDelete: "CASCADE",
+          },
+          {
+            columnNames: ["school_id"],
+            referencedTableName: "schools",
+            referencedColumnNames: ["id"],
+            onDelete: "CASCADE",
+          },
+        ],
       }),
       true
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("parents");
+    await queryRunner.dropTable("notifications");
   }
 }
