@@ -16,7 +16,6 @@ export class Roles1713601089579 implements MigrationInterface {
           {
             name: "name",
             type: "varchar",
-            
             length: "40",
             isUnique: true,
             isNullable: false,

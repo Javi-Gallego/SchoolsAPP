@@ -62,12 +62,6 @@ export class Users1713612060719 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: "role_id",
-            type: "varchar",
-            length: "40",
-            isNullable: false,
-          },
-          {
             name: "school_id",
             type: "int",
             isNullable: false,
@@ -88,12 +82,6 @@ export class Users1713612060719 implements MigrationInterface {
           {
             columnNames: ["school_id"],
             referencedTableName: "schools",
-            referencedColumnNames: ["id"],
-            onDelete: "CASCADE",
-          },
-          {
-            columnNames: ["role_id"],
-            referencedTableName: "roles",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
           },

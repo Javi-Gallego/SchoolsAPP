@@ -20,12 +20,6 @@ export class Notifications1713626917066 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: "date",
-            type: "varchar",
-            length: "40",
-            isNullable: false,
-          },
-          {
             name: "message",
             type: "varchar",
             length: "40",
@@ -34,19 +28,16 @@ export class Notifications1713626917066 implements MigrationInterface {
           {
             name: "publisher_id",
             type: "int",
-            length: "40",
             isNullable: false,
           },
           {
             name: "stage_id",
             type: "int",
-            length: "40",
             isNullable: true,
           },
           {
             name: "course_id",
             type: "int",
-            length: "40",
             isNullable: false,
           },
           {
@@ -69,7 +60,7 @@ export class Notifications1713626917066 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            columnNames: ["pusblisher_id"],
+            columnNames: ["publisher_id"],
             referencedTableName: "users",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",

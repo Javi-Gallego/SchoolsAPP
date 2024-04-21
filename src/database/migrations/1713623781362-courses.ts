@@ -31,11 +31,6 @@ export class Courses1713623781362 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: "school_id",
-            type: "int",
-            isNullable: false,
-          },
-          {
             name: "tutor_id",
             type: "int",
             isNullable: true,
@@ -56,12 +51,6 @@ export class Courses1713623781362 implements MigrationInterface {
           {
             columnNames: ["stage_id"],
             referencedTableName: "stages",
-            referencedColumnNames: ["id"],
-            onDelete: "CASCADE",
-          },
-          {
-            columnNames: ["school_id"],
-            referencedTableName: "schools",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
           },

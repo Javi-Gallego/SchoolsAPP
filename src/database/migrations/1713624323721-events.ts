@@ -22,43 +22,37 @@ export class Events1713624323721 implements MigrationInterface {
           {
             name: "start",
             type: "date",
-            length: "40",
             isNullable: false,
           },
           {
             name: "end",
             type: "date",
-            length: "40",
             isNullable: false,
           },
           {
             name: "message",
             type: "varchar",
-            length: "40",
+            length: "100",
             isNullable: false,
           },
           {
             name: "publisher_id",
             type: "int",
-            length: "40",
             isNullable: false,
           },
           {
             name: "stage_id",
             type: "int",
-            length: "40",
             isNullable: true,
           },
           {
             name: "course_id",
             type: "int",
-            length: "40",
             isNullable: true,
           },
           {
             name: "school_id",
             type: "int",
-            length: "40",
             isNullable: false,
           },
           {

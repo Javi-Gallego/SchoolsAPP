@@ -16,7 +16,7 @@ export class Messages1713628669180 implements MigrationInterface {
           {
             name: "message",
             type: "varchar",
-            length: "40",
+            length: "140",
             isNullable: false,
           },
           {
@@ -53,12 +53,6 @@ export class Messages1713628669180 implements MigrationInterface {
           {
             columnNames: ["receiver_id"],
             referencedTableName: "users",
-            referencedColumnNames: ["id"],
-            onDelete: "CASCADE",
-          },
-          {
-            columnNames: ["school_id"],
-            referencedTableName: "schools",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
           },

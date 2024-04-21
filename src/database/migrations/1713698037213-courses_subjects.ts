@@ -1,33 +1,33 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class ParentStudent1713631216211 implements MigrationInterface {
+export class CoursesSubjects1713698037213 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "parent_student",
+        name: "courses_subjects",
         columns: [
           {
-            name: "parent_id",
+            name: "course_id",
             type: "int",
             isPrimary: true,
           },
           {
-            name: "student_id",
+            name: "subject_id",
             type: "int",
             isPrimary: true,
           },
         ],
         foreignKeys: [
           {
-            columnNames: ["parent_id"],
+            columnNames: ["course_id"],
             referencedColumnNames: ["id"],
-            referencedTableName: "users",
+            referencedTableName: "courses",
             onDelete: "CASCADE",
           },
           {
-            columnNames: ["student_id"],
+            columnNames: ["subject_id"],
             referencedColumnNames: ["id"],
-            referencedTableName: "users",
+            referencedTableName: "subjects",
             onDelete: "CASCADE",
           },
         ],
@@ -37,6 +37,6 @@ export class ParentStudent1713631216211 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("parent_student");
+    await queryRunner.dropTable("courses_subjects");
   }
 }

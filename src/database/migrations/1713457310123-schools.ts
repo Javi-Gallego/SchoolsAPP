@@ -21,7 +21,7 @@ export class Schools1713457310123 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: "direction",
+            name: "address",
             type: "varchar",
             length: "40",
             isUnique: true,
