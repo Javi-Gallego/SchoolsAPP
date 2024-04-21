@@ -43,6 +43,12 @@ export class Users1713612060719 implements MigrationInterface {
             isNullable: true,
           },
           {
+            name: "address",
+            type: "varchar",
+            length: "50",
+            isNullable: false,
+          },
+          {
             name: "email",
             type: "varchar",
             length: "40",

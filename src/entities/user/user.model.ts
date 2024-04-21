@@ -25,6 +25,9 @@ export class User extends BaseEntity{
     @Column({ name: "birthday"})
     birthday!: Date
 
+    @Column({ name: "address"})
+    address!: string
+
     @Column({ name: "email"})
     email!: string
 
@@ -34,14 +37,11 @@ export class User extends BaseEntity{
     @Column({ name: "password_hash", select: false})
     passwordHash!: string
 
-    @Column({ name: "profile_photo"})
-    profile_photo!: string
-
-    @Column({ name: "profile_photo"})
+    @Column({ name: "profile_photo", default: "/uploads/userphoto.png"})
     profilePhoto!: string
 
     @Column({ name: "school_id"})
-    schoolId!: string
+    schoolId!: number
 
     @Column({ name: "created_at", default: () => "CURRENT_TIMESTAMP", select: false})
     createdAt!: Date
