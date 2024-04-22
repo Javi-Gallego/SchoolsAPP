@@ -66,6 +66,7 @@ export class Users1713612060719 implements MigrationInterface {
             type: "varchar",
             length: "255",
             isNullable: false,
+            default: "'/uploads/userphoto.png'",
           },
           {
             name: "school_id",
