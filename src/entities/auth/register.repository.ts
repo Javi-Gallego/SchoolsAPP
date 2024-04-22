@@ -2,15 +2,14 @@ import { ValidationError } from "../../utils/handleError";
 import { User } from "../user/user.model";
 
 export const emailInUse = async (email: string) => {
-  try {
     const isUser = await User.findOne({
       where: { email: email },
     });
 
     if (isUser) {
+      console.log("Email in use");
       throw new ValidationError("Email already in use");
     }
-  } catch (error) {}
 };
 
 export const createUser = async (
