@@ -35,9 +35,6 @@ export const createUser = async (
       schoolId: schoolId,
     }).save();
 
-    console.log("NewUser:",newUser);
-
-
     return newUser;
   } catch (error) {
     console.log(error);

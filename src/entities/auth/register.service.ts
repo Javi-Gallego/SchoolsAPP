@@ -2,31 +2,16 @@ import bcrypt from "bcrypt";
 import { ValidationError } from "../../utils/handleError";
 import { createUser, emailInUse } from "./register.repository";
 import { Request } from "express";
+import { createUserRole } from "../user_role/user_role.controller";
 
 export const getRegisterService = async (req: Request) => {
-  const {
-    firstName,
-    lastName,
-    secondLastName,
-    birthday,
-    phone,
-    address,
-    email,
-    password,
-    schoolId,
-  } = req.body;
+  const { firstName, lastName, secondLastName, birthday, phone,
+    address, email, password, schoolId, role_id } = req.body;
 
-  if (
-    !firstName ||
-    !lastName ||
-    !secondLastName ||
-    !birthday ||
-    !address ||
-    !email ||
-    !password ||
-    !schoolId
+  if ( !firstName || !lastName || !secondLastName || !birthday || !address ||
+    !email || !password || !schoolId
   ) {
-    throw new ValidationError("User name, email and password are required");
+    throw new ValidationError("All the fields are required");
   }
 
   if (firstName.length < 3 || firstName.length > 10) {
@@ -62,5 +47,11 @@ export const getRegisterService = async (req: Request) => {
     schoolId
   );
 
+  if (!newUser) {
+    throw new ValidationError("User not created");
+  }
+
+  const userRole = await createUserRole(newUser.id, role_id);
+  
   return newUser;
 };
