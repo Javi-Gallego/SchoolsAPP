@@ -37,7 +37,7 @@ export class User extends BaseEntity{
     @Column({ name: "password_hash", select: false})
     passwordHash!: string
 
-    @Column({ name: "profile_photo", default: "/uploads/userphoto.png"})
+    @Column({ name: "profile_photo", default: "/uploads/profile/userphoto.png"})
     profilePhoto!: string
 
     @Column({ name: "school_id"})
