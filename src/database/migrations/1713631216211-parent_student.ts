@@ -4,7 +4,7 @@ export class ParentStudent1713631216211 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "parent_student",
+        name: "parents_students",
         columns: [
           {
             name: "parent_id",
@@ -37,6 +37,6 @@ export class ParentStudent1713631216211 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("parent_student");
+    await queryRunner.dropTable("parents_students");
   }
 }
