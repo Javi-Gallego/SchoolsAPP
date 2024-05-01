@@ -12,7 +12,6 @@ export const auth = async (req: Request, res: Response, next: NextFunction) => {
         message: "Token not found / Unauthorized",
       });
     }
-
     const decoded = jwt.verify(token, process.env.JWT_SECRET as string);
 
     req.tokenData = decoded as TokenData;

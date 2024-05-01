@@ -11,29 +11,35 @@ export const emailInUse = async (email: string) => {
       throw new ValidationError("Email already in use");
     }
 };
-
+console.log("register repository");
 export const createUser = async (
   firstName: string,
   lastName: string,
   secondLastName: string,
-  birthday: Date,
+  birthdate: Date,
   address: string,
   email: string,
   password: string,
-  schoolId: number
+  schoolId: number,
+  phone?: number
 ) => {
   try {
     const newUser = await User.create({
       firstName: firstName,
       lastName: lastName,
       secondLastName: secondLastName,
-      birthday: birthday,
+      birthday: birthdate,
       address: address,
       profilePhoto: "",
       email: email,
       passwordHash: password,
       schoolId: schoolId,
     }).save();
+
+    if (phone) {
+      newUser.phone = phone;
+    }
+    await newUser.save();
 
     return newUser;
   } catch (error) {
