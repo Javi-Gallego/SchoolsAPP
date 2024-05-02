@@ -11,7 +11,7 @@ import { isAdmin } from "../../middlewares/isAdmin";
 const router = Router();
 
 router.get("/:schoolId", auth, isAdmin, getStages);
-router.post("/", createStage);
+router.post("/", auth, isAdmin, createStage);
 router.put("/:id", auth, isAdmin, updateStage);
 router.delete("/:id", auth, isAdmin, deleteStage);
 

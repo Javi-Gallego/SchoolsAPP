@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { HttpStatus } from "../../utils/handleError";
-import { getStagesRepository } from "./stage.repository";
 import {
   createStageService,
   deleteStageService,
@@ -10,7 +9,6 @@ import {
 
 export const getStages = async (req: Request, res: Response) => {
   try {
-    console.log("stage controller", req.body);
     const stages = await getStagesService(req);
 
     res.status(HttpStatus.OK).json({
