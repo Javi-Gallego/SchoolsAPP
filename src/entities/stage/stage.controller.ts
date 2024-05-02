@@ -4,12 +4,14 @@ import { getStagesRepository } from "./stage.repository";
 import {
   createStageService,
   deleteStageService,
+  getStagesService,
   updateStageService,
 } from "./stage.service";
 
 export const getStages = async (req: Request, res: Response) => {
   try {
-    const stages = await getStagesRepository();
+    console.log("stage controller", req.body);
+    const stages = await getStagesService(req);
 
     res.status(HttpStatus.OK).json({
       success: true,

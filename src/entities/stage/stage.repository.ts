@@ -1,9 +1,12 @@
 import { Course } from "../course/course.model";
 import { Stage } from "./stage.model";
 
-export const getStagesRepository = async () => {
+export const getStagesRepository = async (schoolId: number) => {
+    if (isNaN(schoolId)) {
+        throw new Error('Invalid schoolId');
+      }
   try {
-    const stages = await Stage.find();
+    const stages = await Stage.find({ where: { schoolId: schoolId } });
 
     return stages;
   } catch (error) {

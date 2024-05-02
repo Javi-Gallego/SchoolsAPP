@@ -3,8 +3,18 @@ import {
   createStageRepository,
   deleteStageRepository,
   getCoursesToStageRepository,
+  getStagesRepository,
   updateStageRepository,
 } from "./stage.repository";
+
+export const getStagesService = async (req: Request) => {
+    console.log("stage service");
+    const schoolId = parseInt(req.params.schoolId);
+
+    const stages = await getStagesRepository(schoolId);
+    
+    return stages;
+};
 
 export const createStageService = async (req: Request) => {
   const { name, schoolId } = req.body;

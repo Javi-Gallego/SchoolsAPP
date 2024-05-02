@@ -10,7 +10,7 @@ import { isAdmin } from "../../middlewares/isAdmin";
 
 const router = Router();
 
-router.get("/", auth, isAdmin, getStages);
+router.get("/:schoolId", auth, isAdmin, getStages);
 router.post("/", createStage);
 router.put("/:id", auth, isAdmin, updateStage);
 router.delete("/:id", auth, isAdmin, deleteStage);
