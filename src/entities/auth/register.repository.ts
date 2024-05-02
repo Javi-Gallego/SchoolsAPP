@@ -11,7 +11,7 @@ export const emailInUse = async (email: string) => {
       throw new ValidationError("Email already in use");
     }
 };
-console.log("register repository");
+
 export const createUser = async (
   firstName: string,
   lastName: string,

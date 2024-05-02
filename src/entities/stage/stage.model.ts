@@ -10,20 +10,11 @@ export class Stage extends BaseEntity{
     @PrimaryGeneratedColumn()
     id!: number
 
-    @Column({ name: "first_name"})
-    firstName!: string
-
-    @Column({ name: "last_name"})
-    lastName!: string
+    @Column({ name: "name"})
+    name!: string
 
     @Column({ name: "school_id"})
-    schoolId!: string
-
-    @Column({ name: "created_at", default: () => "CURRENT_TIMESTAMP", select: false})
-    createdAt!: Date
-
-    @Column({ name: "updated_at", default: () => "CURRENT_TIMESTAMP", onUpdate: "CURRENT_TIMESTAMP", select: false},)
-    updatedAt!: Date
+    schoolId!: number
 
     @ManyToOne(() => School, (school) => school.stages)
     @JoinColumn({name: "school_id"})

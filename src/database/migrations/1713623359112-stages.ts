@@ -20,6 +20,12 @@ export class Stages1713623359112 implements MigrationInterface {
             isUnique: true,
             isNullable: false,
           },
+          {
+            name: "school_id",
+            type: "int",
+            length: "10",
+            isNullable: false,
+          },
         ],
       }),
       true

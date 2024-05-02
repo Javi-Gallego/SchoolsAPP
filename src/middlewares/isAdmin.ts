@@ -18,7 +18,6 @@ export const isAdmin = (
   next: NextFunction
 ) => {
   try {
-    console.log(req.tokenData);
     // if (req.tokenData.roleName !== "super_admin" && req.tokenData.roleName !== "admin") {
     //   return res.status(403).json({
     //     success: false,
