@@ -6,11 +6,11 @@ import {
   ValidationError,
   handleError,
 } from "../../utils/handleError";
-import { createSubjectService, getSubjectsService } from "./subject.service";
+import { createSubjectService, deleteSubjectService, getSubjectsService } from "./subject.service";
 
 export const getSubjects = async (req: Request, res: Response) => {
   try {
-    const subjects = await getSubjectsService();
+    const subjects = await getSubjectsService(req);
 
     res.status(HttpStatus.OK).json({
       success: true,
@@ -50,5 +50,19 @@ export const createSubject = async (req: Request, res: Response) => {
       HttpStatus.INTERNAL_SERVER_ERROR,
       ""
     );
+  }
+};
+
+export const deleteSubject = async (req: Request, res: Response) => {
+  try {
+    const deletedSubject = await deleteSubjectService(req);
+
+    res.status(HttpStatus.OK).json({
+      success: true,
+      message: "Subject deleted succesfully",
+      data: deletedSubject,
+    });
+  } catch (error) {
+    handleError(res, "Cant delete subject", HttpStatus.INTERNAL_SERVER_ERROR, "");
   }
 };
