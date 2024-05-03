@@ -14,7 +14,7 @@ export const schoolSeedDatabase = async () => {
     await School1.save();
 
     console.log("--------------------------------------------------");
-    console.log("---- Los colegios se han creado correctamente ----");
+    console.log("---------- Schools created successfully ----------");
     console.log("--------------------------------------------------");
   } catch (error) {
     console.log(error);

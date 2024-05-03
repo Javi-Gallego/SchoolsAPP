@@ -36,7 +36,7 @@ export const parentStudentSeedDatabase = async () => {
     await parentStudent6.save();
 
     console.log("--------------------------------------------------");
-    console.log(" Los parents_students se han creado correctamente ");
+    console.log("------ parents_students created successfully -----");
     console.log("--------------------------------------------------");
   } catch (error) {
     console.log(error);

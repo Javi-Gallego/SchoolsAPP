@@ -30,7 +30,7 @@ export const roleSeedDatabase = async () => {
     await RoleParent.save();
 
     console.log("--------------------------------------------------");
-    console.log("----- Los roles se han creado correctamente ------");
+    console.log("----------- Roles created successfully -----------");
     console.log("--------------------------------------------------");
   } catch (error) {
     console.log(error);

@@ -130,8 +130,60 @@ export const userSeedDatabase = async () => {
     User10.schoolId = 1;
     await User10.save();
 
+    const User11 = new User();
+    User11.firstName = "Ricardo";
+    User11.lastName = "Gómez";
+    User11.secondLastName = "Gómez";
+    User11.email = "ricardo@gmail.com";
+    User11.phone = 628123125;
+    User11.passwordHash =
+      "$2b$08$aqubbCeubz8w6cj6HiT0.uU9QKUKcNxysvGMf1GcY3WujtuWw8uJq";
+    User11.birthday = new Date("1977-04-10");
+    User11.address = "Calle secundaria n32";
+    User11.schoolId = 1;
+    await User11.save();
+
+    const User12 = new User();
+    User12.firstName = "Alberto";
+    User12.lastName = "Chicote";
+    User12.secondLastName = "Valero";
+    User12.email = "alberto@gmail.com";
+    User12.phone = 698654125;
+    User12.passwordHash =
+      "$2b$08$aqubbCeubz8w6cj6HiT0.uU9QKUKcNxysvGMf1GcY3WujtuWw8uJq";
+    User12.birthday = new Date("1990-04-10");
+    User12.address = "Calle terciaria n43";
+    User12.schoolId = 1;
+    await User12.save();
+
+    const User13 = new User();
+    User13.firstName = "Ana";
+    User13.lastName = "Calatayud";
+    User13.secondLastName = "Calatayud";
+    User13.email = "ana@gmail.com";
+    User13.phone = 634625874;
+    User13.passwordHash =
+      "$2b$08$aqubbCeubz8w6cj6HiT0.uU9QKUKcNxysvGMf1GcY3WujtuWw8uJq";
+    User13.birthday = new Date("1993-04-10");
+    User13.address = "Calle de la petunia n85";
+    User13.schoolId = 1;
+    await User13.save();
+
+    const User14 = new User();
+    User14.firstName = "Yolanda";
+    User14.lastName = "Sanz";
+    User14.secondLastName = "Perez";
+    User14.email = "yola@gmail.com";
+    User14.phone = 696636910;
+    User14.passwordHash =
+      "$2b$08$aqubbCeubz8w6cj6HiT0.uU9QKUKcNxysvGMf1GcY3WujtuWw8uJq";
+    User14.birthday = new Date("1976-04-10");
+    User14.address = "Calle sin nombre n8";
+    User14.schoolId = 1;
+    await User14.save();
+
     console.log("--------------------------------------------------");
-    console.log("----- Los users se han creado correctamente ------");
+    console.log("----------- Users created successfully -----------");
     console.log("--------------------------------------------------");
   } catch (error) {
     console.log(error);

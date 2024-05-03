@@ -3,6 +3,7 @@ import { Stage } from "../stage/stage.model"
 import { User } from "../user/user.model"
 import { Event } from "../event/event.model"
 import { Notification } from "../notification/notification.model"
+import { Subject } from "../subject/subject.model"
 
 @Entity("schools")
 export class School extends BaseEntity{
@@ -36,6 +37,9 @@ export class School extends BaseEntity{
 
     @OneToMany(() => Stage, stage => stage.school)
     stages!: Stage[]
+
+    @OneToMany(() => Subject, subject => subject.school)
+    subjects!: Subject[]
 
     @OneToMany(() => Event, event => event.school)
     events!: Event[]
