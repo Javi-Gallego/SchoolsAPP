@@ -148,7 +148,7 @@ export const userSeedDatabase = async () => {
     User12.lastName = "Chicote";
     User12.secondLastName = "Valero";
     User12.email = "alberto@gmail.com";
-    User12.phone = 698654125;
+    User12.phone = 608654125;
     User12.passwordHash =
       "$2b$08$aqubbCeubz8w6cj6HiT0.uU9QKUKcNxysvGMf1GcY3WujtuWw8uJq";
     User12.birthday = new Date("1990-04-10");
@@ -170,11 +170,11 @@ export const userSeedDatabase = async () => {
     await User13.save();
 
     const User14 = new User();
-    User14.firstName = "Yolanda";
-    User14.lastName = "Sanz";
-    User14.secondLastName = "Perez";
-    User14.email = "yola@gmail.com";
-    User14.phone = 696636910;
+    User14.firstName = "Soraya";
+    User14.lastName = "Buj";
+    User14.secondLastName = "Buj";
+    User14.email = "soraya@gmail.com";
+    User14.phone = 696636710;
     User14.passwordHash =
       "$2b$08$aqubbCeubz8w6cj6HiT0.uU9QKUKcNxysvGMf1GcY3WujtuWw8uJq";
     User14.birthday = new Date("1976-04-10");

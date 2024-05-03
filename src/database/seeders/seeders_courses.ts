@@ -43,7 +43,7 @@ export const courseSeedDatabase = async () => {
 
     const course7 = new Course();
     course7.name = "1º ESO";
-    course6.stageId = 3;
+    course7.stageId = 3;
     course7.year = "1";
     await course7.save();
 
