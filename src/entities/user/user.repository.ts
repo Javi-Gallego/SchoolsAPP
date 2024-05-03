@@ -8,7 +8,12 @@ export const getUsersRepository = async (
   skip: number
 ) => {
   try {
+
     let query = User.createQueryBuilder("user");
+    if (filters.schoolId) {
+        const schoolId = filters.schoolId;
+        query = query.andWhere("user.schoolId = :schoolId", { schoolId });
+      }
     if (filters.firstName) {
       query = query.where("user.name = :name", {
         first_name: filters.firstName,

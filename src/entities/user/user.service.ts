@@ -8,6 +8,7 @@ export interface queryFiltersE {
   firstName?: FindOperator<string>;
   lastName?: FindOperator<string>;
   roleName?: string;
+  schoolId?: number;
 //   role?: {
 //     name: FindOperator<string>;
 //   };
@@ -35,6 +36,9 @@ export const getUsersService = async (req: Request) => {
   }
   if (req.query.roleName && typeof req.query.roleName === "string") {
     queryFilters.roleName = req.query.roleName;
+  }
+  if (req.query.schoolId && typeof req.query.schoolId === "string") {
+    queryFilters.schoolId = parseInt(req.query.schoolId);
   }
 //   if (req.query.role) {
 //     queryFilters.role = { name: Like(`%${req.query.role}%`) };

@@ -9,13 +9,13 @@ export const getUsers = async (req: Request, res: Response) => {
     
         res.status(HttpStatus.OK).json({
           success: true,
-          message: "Stages retrieved succesfully",
+          message: "Users retrieved succesfully",
           data: users,
         });
       } catch (error) {
         return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
           success: false,
-          message: "Can't retrieve stages",
+          message: "Can't retrieve users",
           error: error,
         });
       }
