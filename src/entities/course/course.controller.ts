@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { HttpStatus } from "../../utils/handleError";
+import { ForbiddenError, HttpStatus, NotFoundError, ValidationError, handleError } from "../../utils/handleError";
 import { createCourseService, deleteCourseService, getCoursesService, updateCourseService } from "./course.service";
 
 export const getCourses = async (req: Request, res: Response) => {
@@ -30,11 +30,19 @@ export const getCourses = async (req: Request, res: Response) => {
         data: course,
       });
     } catch (error) {
-      return res.status(500).json({
-        success: false,
-        message: "Can't create course",
-        error: error,
-      });
+      if (
+        error instanceof ValidationError ||
+        error instanceof ForbiddenError ||
+        error instanceof NotFoundError
+      ) {
+        return handleError(
+          res,
+          error.message,
+          HttpStatus.BAD_REQUEST,
+          error.name
+        );
+      }
+      handleError(res, "Cant log user", HttpStatus.INTERNAL_SERVER_ERROR, "");
     }
   };
   

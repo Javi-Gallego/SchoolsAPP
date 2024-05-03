@@ -1,5 +1,7 @@
 import { Request } from "express";
 import { createCourseRepository, deleteCourseRepository, getCoursesRepository, updateCourseRepository } from "./course.repository";
+import { Course } from "./course.model";
+import { ValidationError } from "../../utils/handleError";
 
 export const getCoursesService = async (req: Request) => {
     const { name, stageId, year, tutorId } = req.body;
@@ -11,6 +13,11 @@ export const getCoursesService = async (req: Request) => {
 
 export const createCourseService = async (req: Request) => {
   const { name, stageId, year, tutorId } = req.body;
+  
+  const nameExists = await Course.findOne({ where: { name: name } });
+  if (nameExists) {
+    throw new ValidationError("Course already exists");
+  }
   
   const newCourse = await createCourseRepository(name, stageId, year, tutorId);
 
