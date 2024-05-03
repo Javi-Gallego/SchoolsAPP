@@ -17,7 +17,7 @@ export const getStages = async (req: Request, res: Response) => {
       data: stages,
     });
   } catch (error) {
-    return res.status(500).json({
+    return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
       success: false,
       message: "Can't retrieve stages",
       error: error,
@@ -35,7 +35,7 @@ export const createStage = async (req: Request, res: Response) => {
       data: stage,
     });
   } catch (error) {
-    return res.status(500).json({
+    return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
       success: false,
       message: "Can't create stage",
       error: error,
@@ -53,7 +53,7 @@ export const updateStage = async (req: Request, res: Response) => {
       data: stage,
     });
   } catch (error) {
-    return res.status(500).json({
+    return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
       success: false,
       message: "Can't update stage",
       error: error,
@@ -71,7 +71,7 @@ export const deleteStage = async (req: Request, res: Response) => {
       data: stage,
     });
   } catch (error) {
-    return res.status(500).json({
+    return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
       success: false,
       message: "Can't delete stage",
       error: error,

@@ -3,7 +3,11 @@ import { Course } from "./course.model";
 export const getCoursesRepository = async () => {
 
   try {
-    const courses = await Course.find();
+    const courses = await Course.find({
+        order: {
+            year: "ASC",
+        }
+    });
 
     return courses;
   } catch (error) {

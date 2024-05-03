@@ -8,7 +8,6 @@ import {
 } from "./stage.repository";
 
 export const getStagesService = async (req: Request) => {
-    console.log("stage service");
     const schoolId = parseInt(req.params.schoolId);
 
     const stages = await getStagesRepository(schoolId);
