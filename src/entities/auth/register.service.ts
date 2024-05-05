@@ -5,8 +5,7 @@ import { Request } from "express";
 import { createUserRole } from "../user_role/user_role.controller";
 
 export const getRegisterService = async (req: Request) => {
-  console.log("Registering user");
-  console.log(req.body.userData)
+
   const { firstName, lastName, secondLastName, birthdate, phone,
     address, email, password, schoolId, roleId } = req.body.userData;
     console.log("1");

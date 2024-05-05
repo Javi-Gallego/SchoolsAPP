@@ -1,3 +1,4 @@
+import { courseSubjectSeedDatabase } from "./seeders_course_subject";
 import { courseSeedDatabase } from "./seeders_courses";
 import { parentStudentSeedDatabase } from "./seeders_parents_students";
 import { roleSeedDatabase } from "./seeders_roles";
@@ -16,6 +17,7 @@ const callSeeders = async () => {
   await stageSeedDatabase();
   await courseSeedDatabase();
   await subjectSeedDatabase();
+  await courseSubjectSeedDatabase();
 };
 
 callSeeders();

@@ -32,10 +32,10 @@ export const createCourseRepository = async (name: string, stageId: number, year
   }
 };
 
-export const updateCourseRepository = async (id: number, name: string) => {
+export const updateCourseRepository = async (id: number, tutorId: number) => {
   try {
     const updatedCourse = await Course.update(id, {
-      name: name,
+      tutorId: tutorId,
     });
 
     return updatedCourse;

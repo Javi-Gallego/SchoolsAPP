@@ -26,9 +26,9 @@ export const createCourseService = async (req: Request) => {
 
 export const updateCourseService = async (req: Request) => {
   const id = parseInt(req.params.id);
-  const { name } = req.body;
+  const { tutorId } = req.body;
 
-  const updatedCourse = await updateCourseRepository(id, name);
+  const updatedCourse = await updateCourseRepository(id, tutorId);
 
   return updatedCourse;
 };
