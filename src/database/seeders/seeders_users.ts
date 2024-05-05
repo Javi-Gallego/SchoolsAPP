@@ -18,9 +18,9 @@ export const userSeedDatabase = async () => {
     await User1.save();
 
     const User2 = new User();
-    User2.firstName = "Admin";
-    User2.lastName = "Admin";
-    User2.secondLastName = "Admin";
+    User2.firstName = "Administración";
+    User2.lastName = "El Drac";
+    User2.secondLastName = "Escola";
     User2.email = "admin@gmail.com";
     User2.passwordHash =
       "$2b$08$aqubbCeubz8w6cj6HiT0.uU9QKUKcNxysvGMf1GcY3WujtuWw8uJq";

@@ -19,8 +19,8 @@ export class Event extends BaseEntity{
     @Column({ name: "end"})
     end!: Date
 
-    @Column({ name: "message"})
-    message!: string
+    @Column({ name: "description"})
+    description!: string
 
     @Column({ name: "publisher_id"})
     publisherId!: number
@@ -33,6 +33,9 @@ export class Event extends BaseEntity{
 
     @Column({ name: "school_id"})
     schoolId!: number
+
+    @Column({ name: "backgroundColor" })
+    backgroundColor!: string
 
     @Column({ name: "created_at", default: () => "CURRENT_TIMESTAMP", select: false})
     createdAt!: Date

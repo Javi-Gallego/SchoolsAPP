@@ -13,6 +13,7 @@ import { Events1713624323721 } from "./migrations/1713624323721-events";
 import { Notifications1713626917066 } from "./migrations/1713626917066-notifications";
 import { Messages1713628669180 } from "./migrations/1713628669180-messages";
 import { ParentStudent1713631216211 } from "./migrations/1713631216211-parent_student";
+import { CourseUsers1714891561599 } from "./migrations/1714891561599-course_users";
 import { Role } from "../entities/role/role.model";
 import { User } from "../entities/user/user.model";
 import { School } from "../entities/school/school.model";
@@ -25,6 +26,7 @@ import { Event } from "../entities/event/event.model";
 import { Notification } from "../entities/notification/notification.model";
 import { Message } from "../entities/message/message.model";
 import { ParentStudent } from "../entities/parent_student/parent_student.model";
+import { CourseUser } from "../entities/course_user/course_user.model";
 
 export const AppDataSource = new DataSource({
   type: "mysql",
@@ -33,8 +35,8 @@ export const AppDataSource = new DataSource({
   username: process.env.DB_USER || "root",
   password: process.env.DB_PASS || "",
   database: process.env.DB_NAME || "test",
-  entities: [School, Role, User, UserRole, Stage, Subject, Course, CourseSubject, Event, Notification, Message, ParentStudent],
-  migrations: [Schools1713457310123, Roles1713601089579, Users1713612060719, UsersRoles1713631471268, Stages1713623359112, Subjects1713624214729, Courses1713623781362, CoursesSubjects1713698037213, Events1713624323721, Notifications1713626917066, Messages1713628669180, ParentStudent1713631216211 ],
+  entities: [School, Role, User, UserRole, Stage, Subject, Course, CourseSubject, Event, Notification, Message, ParentStudent, CourseUser],
+  migrations: [Schools1713457310123, Roles1713601089579, Users1713612060719, UsersRoles1713631471268, Stages1713623359112, Subjects1713624214729, Courses1713623781362, CoursesSubjects1713698037213, Events1713624323721, Notifications1713626917066, Messages1713628669180, ParentStudent1713631216211, CourseUsers1714891561599 ],
   synchronize: false,
   logging: false,
 });

@@ -5,6 +5,7 @@ export const getCoursesRepository = async () => {
   try {
     const courses = await Course.find({
         order: {
+            stageId: "ASC",
             year: "ASC",
         }
     });

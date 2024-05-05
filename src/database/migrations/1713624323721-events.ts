@@ -30,7 +30,7 @@ export class Events1713624323721 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: "message",
+            name: "description",
             type: "varchar",
             length: "100",
             isNullable: false,
@@ -53,6 +53,12 @@ export class Events1713624323721 implements MigrationInterface {
           {
             name: "school_id",
             type: "int",
+            isNullable: false,
+          },
+          {
+            name: "backgroundColor",
+            type: "varchar",
+            length: "100",
             isNullable: false,
           },
           {

@@ -45,5 +45,6 @@ export const getUsersService = async (req: Request) => {
 //   }
 
   const users = await getUsersRepository(queryFilters, limit, skip);
+
   return users;
 };
