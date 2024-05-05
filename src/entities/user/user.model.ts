@@ -6,6 +6,7 @@ import { Event } from "../event/event.model"
 import { ParentStudent } from "../parent_student/parent_student.model"
 import { Notification } from "../notification/notification.model"
 import { Message } from "../message/message.model"
+import { CourseUser } from "../course_user/course_user.model"
 
 @Entity("users")
 export class User extends BaseEntity{
@@ -64,6 +65,9 @@ export class User extends BaseEntity{
 
     @OneToOne(() => Course, course => course.tutor)
     course!: Course;
+
+    @OneToOne(() => CourseUser, course => course.Student)
+    student!: CourseUser;
 
     @OneToMany(() => Event, event => event.publisher)
     events!: Event[]

@@ -13,6 +13,7 @@ import { Stage } from "../stage/stage.model";
 import { User } from "../user/user.model";
 import { Event } from "../event/event.model";
 import { Notification } from "../notification/notification.model";
+import { CourseUser } from "../course_user/course_user.model";
 
 @Entity("courses")
 export class Course extends BaseEntity {
@@ -50,8 +51,11 @@ export class Course extends BaseEntity {
   @JoinColumn({ name: "stage_id" })
   stage!: Stage;
 
-  @OneToMany(() => CourseSubject, (coursesubject) => coursesubject.course)
-  courses!: CourseSubject[];
+  @OneToMany(() => CourseSubject, (courseSubject) => courseSubject.courseS)
+  courseSubject!: CourseSubject[];
+
+  @OneToMany(() => CourseUser, (courseUser) => courseUser.courseU)
+  courseUser!: CourseUser[];
 
   @OneToOne(() => User)
   @JoinColumn({ name: "tutor_id" })

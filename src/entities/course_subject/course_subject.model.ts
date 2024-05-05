@@ -11,9 +11,9 @@ export class CourseSubject extends BaseEntity{
     @PrimaryColumn( { name: "subject_id" } )
     subjectId!: number
 
-    @ManyToOne(() => Course, (course) => course.courses)
+    @ManyToOne(() => Course, (course) => course.courseSubject)
     @JoinColumn({name: "course_id"})
-    course!: Course
+    courseS!: Course
 
     @ManyToOne(() => Subject, (subject) => subject.subjects)
     @JoinColumn({name: "subject_id"})
