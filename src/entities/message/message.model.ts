@@ -7,9 +7,6 @@ export class Message extends BaseEntity{
     @PrimaryGeneratedColumn()
     id!: number
 
-    @Column({ name: "title"})
-    title!: string
-
     @Column({ name: "message"})
     message!: string
 
@@ -18,6 +15,9 @@ export class Message extends BaseEntity{
 
     @Column({ name: "receiver_id"})
     receiverId!: number
+
+    @Column({ name: "seenReceiver", default: false})
+    seenReceiver!: boolean
 
     @Column({ name: "created_at", default: () => "CURRENT_TIMESTAMP", select: false})
     createdAt!: Date

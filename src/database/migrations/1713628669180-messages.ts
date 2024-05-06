@@ -32,6 +32,11 @@ export class Messages1713628669180 implements MigrationInterface {
             isNullable: false,
           },
           {
+            name: "seenReceiver",
+            type: "boolean",
+            default: false,
+          },
+          {
             name: "created_at",
             type: "timestamp",
             default: "now()",
