@@ -2,31 +2,53 @@ import { Message } from "./message.model";
 
 export const getMessagesRepository = async (userId: number) => {
   try {
-    const messages = await Message.find({ 
-        where: [
-            { authorId: userId }, 
-            { receiverId: userId }
-        ],
-        relations: ["author", "receiver"],
+    const messages = await Message.find({
+      where: [{ authorId: userId }, { receiverId: userId }],
+      relations: ["author", "receiver"],
     });
-
-    // const groupedMessages = messages.reduce((groups: { [key: string]: { messages: Message[], authorName: string, receiverName: string } }, message) => {
-    //     const key = [message.authorId, message.receiverId].sort().join('-');
-    //     if (!groups[key]) {
-    //       groups[key] = {
-    //         messages: [],
-    //         authorName: message.author.firstName,
-    //         receiverName: message.receiver.firstName,
-    //       };
-    //     }
-    //     groups[key].messages.push(message);
-    //     return groups;
-    //   }, {});
-    //   console.log("groupedMessages", groupedMessages)
-    //   return groupedMessages;
 
     return messages;
   } catch (error) {
     console.log(error);
   }
+};
+
+export const createMessageRepository = async (
+  newMessage: string,
+  authorId: number,
+  receiverId: number
+) => {
+  console.log(
+    "message: ",
+    newMessage,
+    "autor: ",
+    authorId,
+    "receiver: ",
+    receiverId
+  );
+  const message = Message.create({
+    message: newMessage,
+    authorId,
+    receiverId,
+  });
+
+  await message.save();
+
+  return message;
+};
+
+export const updateMessageRepository = async (userId1: number, userId2: number) => {
+    console.log("userId1: ", userId1, "userId2: ", userId2);
+    const messages = await Message.find({
+        where: [
+        { authorId: userId2, receiverId: userId1 },
+        ],
+    });
+    console.log("messages: ", messages);
+    messages.forEach(async (message) => {
+        message.seenReceiver = true;
+        await message.save();
+    });
+    
+    return messages;
 };

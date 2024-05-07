@@ -5,9 +5,10 @@ import { getUsersRepository } from "./user.repository";
 
 export interface queryFiltersE {
   email?: FindOperator<string>;
-  firstName?: FindOperator<string>;
+  firstName?: string;
   lastName?: FindOperator<string>;
-  roleName?: string;
+  // roleName?: string;
+  roleNames?: string[];
   schoolId?: number;
 //   role?: {
 //     name: FindOperator<string>;
@@ -25,17 +26,20 @@ export const getUsersService = async (req: Request) => {
 
   const queryFilters: queryFiltersE = {};
 
-  if (req.query.email) {
+  if (req.query.email && typeof req.query.email === "string") {
     queryFilters.email = Like(`%${req.query.email}%`);
   }
-  if (req.query.firstName) {
-    queryFilters.firstName = Like(`%${req.query.firstName}%`);
+  if (req.query.firstName && typeof req.query.firstName === "string") {
+    queryFilters.firstName = req.query.firstName;
   }
-  if (req.query.lastname) {
+  if (req.query.lastName && typeof req.query.lastName === "string") {
     queryFilters.lastName = Like(`%${req.query.lastName}%`);
   }
+  // if (req.query.roleName && typeof req.query.roleName === "string") {
+  //   queryFilters.roleName = req.query.roleName;
+  // }
   if (req.query.roleName && typeof req.query.roleName === "string") {
-    queryFilters.roleName = req.query.roleName;
+    queryFilters.roleNames = req.query.roleName.split(",");
   }
   if (req.query.schoolId && typeof req.query.schoolId === "string") {
     queryFilters.schoolId = parseInt(req.query.schoolId);
