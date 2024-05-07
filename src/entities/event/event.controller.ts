@@ -32,7 +32,7 @@ export const getEvents = async (req: Request, res: Response) => {
     }
     handleError(
       res,
-      "Cant create events",
+      "Cant retrieve events",
       HttpStatus.INTERNAL_SERVER_ERROR,
       ""
     );

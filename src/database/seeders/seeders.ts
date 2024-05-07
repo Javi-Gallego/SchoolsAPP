@@ -2,6 +2,7 @@ import { courseSubjectSeedDatabase } from "./seeders_course_subject";
 import { courseUserSeedDatabase } from "./seeders_course_user";
 import { courseSeedDatabase } from "./seeders_courses";
 import { eventSeedDatabase } from "./seeders_events";
+import { messageSeedDatabase } from "./seeders_messages";
 import { parentStudentSeedDatabase } from "./seeders_parents_students";
 import { roleSeedDatabase } from "./seeders_roles";
 import { schoolSeedDatabase } from "./seeders_schools";
@@ -22,6 +23,7 @@ const callSeeders = async () => {
   await courseSubjectSeedDatabase();
   await courseUserSeedDatabase();
   await eventSeedDatabase();
+  await messageSeedDatabase();
 };
 
 callSeeders();
