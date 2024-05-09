@@ -4,6 +4,7 @@ import { Request } from "express";
 import { getUsersRepository } from "./user.repository";
 
 export interface queryFiltersE {
+  id?: number;
   email?: FindOperator<string>;
   firstName?: string;
   lastName?: FindOperator<string>;
@@ -26,6 +27,9 @@ export const getUsersService = async (req: Request) => {
 
   const queryFilters: queryFiltersE = {};
 
+  if (req.query.id && typeof req.query.id === "string") {
+    queryFilters.id = parseInt(req.query.id);
+  }
   if (req.query.email && typeof req.query.email === "string") {
     queryFilters.email = Like(`%${req.query.email}%`);
   }

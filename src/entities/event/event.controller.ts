@@ -10,6 +10,7 @@ import { createEventService, getEventsService } from "./event.service";
 
 export const getEvents = async (req: Request, res: Response) => {
   try {
+
     const stages = await getEventsService(req);
 
     res.status(HttpStatus.OK).json({

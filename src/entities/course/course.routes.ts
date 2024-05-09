@@ -5,7 +5,7 @@ import { createCourse, deleteCourse, getCourses, updateCourse } from "./course.c
 
 const router = Router();
 
-router.get("/", auth, isAdmin, getCourses);
+router.get("/", auth, getCourses);
 router.post("/", auth, isAdmin, createCourse);
 router.put("/:id", auth, isAdmin, updateCourse);
 router.delete("/:id", auth, isAdmin, deleteCourse);

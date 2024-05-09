@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 
 export const getEventsRepository = async (queryFilter: EventFilter) => {
   const { schoolId, stageId, courseId, date } = queryFilter;
+
   const events = await Event.find({
     where: [
       { end: date, schoolId: schoolId, stageId: stageId, courseId: courseId },

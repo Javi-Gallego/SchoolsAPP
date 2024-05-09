@@ -8,6 +8,7 @@ import courseSubjectRoutes from "../entities/course_subject/course_subject.route
 import courseUserRoutes from "../entities/course_user/course_user.routes";
 import eventRoutes from "../entities/event/event.routes";
 import messageRoutes from "../entities/message/message.routes";
+import parentStudentRoutes from "../entities/parent_student/parent_student.routes";
 
 const router = Router();
 
@@ -15,7 +16,7 @@ router.use("/auth", authRoutes);
 // router.use("/schools", schoolRoutes);
 // router.use("/roles", roleRoutes);
 router.use("/users", userRoutes);
-// router.use("/parent-student", parentStudentRoutes);
+router.use("/parentstudent", parentStudentRoutes);
 router.use("/stages", stageRoutes);
 router.use("/subjects", subjectRoutes);
 router.use("/courses", courseRoutes);
