@@ -1,8 +1,7 @@
-
 import { User } from "../user/user.model";
 
-export const findUserByEmail = async (email: string) => {
 
+export const findUserByEmail = async (email: string) => {
   const user = await User.createQueryBuilder("user")
     .where("user.email = :email", { email })
     .leftJoinAndSelect("user.roles", "userRole")
