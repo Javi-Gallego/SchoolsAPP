@@ -1,3 +1,4 @@
+import { Request } from "express";
 import { ValidationError } from "../../utils/handleError";
 import { createUserRoleRepository } from "./user_role.repostitory";
 
