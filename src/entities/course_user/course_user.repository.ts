@@ -14,3 +14,28 @@ export const getCourseUsersRepository = async (courseId: number) => {
     console.log("error", error);
   }
 };
+
+export const getStudentCourseRepository = async (studentId: number) => {
+  try {
+    const courseUsers = await CourseUser.find({
+      where: {
+        userId: studentId,
+      },
+      relations: ["courseU"],
+    });
+
+    return courseUsers;
+  } catch (error) {
+    console.log("error", error);
+  }
+};
+
+export const createCourseUsersRepository = async (courseId: number, userId: number) => {
+
+    const courseUser = await CourseUser.create({
+      courseId,
+      userId,
+    }).save();
+
+    return courseUser;
+};
