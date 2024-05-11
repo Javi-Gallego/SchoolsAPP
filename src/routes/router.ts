@@ -9,6 +9,7 @@ import courseUserRoutes from "../entities/course_user/course_user.routes";
 import eventRoutes from "../entities/event/event.routes";
 import messageRoutes from "../entities/message/message.routes";
 import parentStudentRoutes from "../entities/parent_student/parent_student.routes";
+import notificationRoutes from "../entities/notification/notification.routes";
 
 const router = Router();
 
@@ -23,7 +24,7 @@ router.use("/courses", courseRoutes);
 router.use("/coursesubjects", courseSubjectRoutes);
 router.use("/courseusers", courseUserRoutes);
 router.use("/events", eventRoutes);
-// router.use("/notifications", notificationRoutes);
+router.use("/notifications", notificationRoutes);
 router.use("/messages", messageRoutes);
 
 

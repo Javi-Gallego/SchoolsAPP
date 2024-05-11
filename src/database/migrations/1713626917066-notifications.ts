@@ -22,7 +22,7 @@ export class Notifications1713626917066 implements MigrationInterface {
           {
             name: "message",
             type: "varchar",
-            length: "40",
+            length: "255",
             isNullable: false,
           },
           {
@@ -38,13 +38,19 @@ export class Notifications1713626917066 implements MigrationInterface {
           {
             name: "course_id",
             type: "int",
-            isNullable: false,
+            isNullable: true,
           },
           {
             name: "school_id",
             type: "int",
             length: "40",
             isNullable: false,
+          },
+          {
+            name: "viewers",
+            type: "simple-array",
+            isNullable: false,
+            default: "",
           },
           {
             name: "created_at",
