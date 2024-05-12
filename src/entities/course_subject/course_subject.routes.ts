@@ -9,6 +9,6 @@ const router = Router();
 router.get("/:courseId", auth, isAdmin, getCourseSubjects);
 router.post("/", auth, isAdmin, createCourseSubject);
 // router.put("/:id", auth, isAdmin, updateSubject);
-router.delete("/:id", auth, isAdmin, deleteCourseSubject);
+router.delete("/", auth, isAdmin, deleteCourseSubject);
 
 export default router;

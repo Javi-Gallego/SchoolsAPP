@@ -364,7 +364,7 @@ When an endpoint needs authentication you must put the token given to you when y
 
         IF authorId doesnt match userId of the token, the message will not be created.
 
-        
+
     - UPDATE MESSAGE :earth_africa:
 
             POST https://schoolsapp-production.up.railway.app/api/messages
@@ -376,10 +376,114 @@ When an endpoint needs authentication you must put the token given to you when y
             }
         ```
     This will automatically update the messages and put them as already seen. userId1 es the one who updates messages in which userId2 is the author and userId1 the receiver.
+
+- NOTIFICATIONS
+
+    - GET NOTIFICATIONS :earth_africa:
+
+            GET https://schoolsapp-production.up.railway.app/api/notification/?schoolId=1
+  
+
+        It is mandatory to select a schoolId as param. It could be added stageId and courseId as filters in the params.
+
+    - CREATE NOTIFICATION :man:
+
+            POST https://schoolsapp-production.up.railway.app/api/notification
+            body:
+        ``` js
+            {
+                "title": "Nueva propuesta de Menú comedor", 
+                "message": "Después de estudiar nuevas propuestas de varias empresas, nos hemos decido a contar con los servicios de Delicious Foods que vendrá a preparar los menús todos los días a nuestro comedor. Se enviará más información al correo de cada padre.", 
+                "schoolId": 1, 
+                "publisherId": 2
+            }
+        ```
+
+        This fields are mandatories, the minimun required to crete a notification. It can have stageId and courseId. If the notification is for the entire school to be received only schoolId must be put on the body. If you need to target a part of the courses or stages, it can be put on the body. 
+
+        Notifications are received by every user but only admin, teacher or personal can create new ones.
+
+- PARENT_STUDENT - To fill the intermediate table that relates parent with its child. 
  
+    - CREATE PARENT_STUDENT :angel:
+
+            POST https://schoolsapp-production.up.railway.app/api/parentstudent
+            body:
+        ``` js
+            {
+                "studentId": 1, 
+                "parentId": 2
+            }
+        ```
+    
+
+- COURSE_SUBJECT - To fill the intermediate table that relates subjects with the courses where are imparted
+
+    - GET SUBJECTS OF A COURSE :angel:
+
+            GET https://schoolsapp-production.up.railway.app/api/coursesubjects/1
+  
+
+        This will automatically retrieve all the subjects of the course whose Id has been put as param.
+
+    - ADD SUBJECT TO A COURSE :angel:
+
+            POST https://schoolsapp-production.up.railway.app/api/coursesubjects
+            body:
+        ``` js
+            {
+                "subjectId": 5,
+                "courseId": 5      
+            }
+        ```
+
+    - DELETE COURSE :angel:
+
+            DELETE https://schoolsapp-production.up.railway.app/api/coursesubjects
+            body:
+        ``` js
+            {
+                "subjectId": 3,
+                "courseId": 5
+            }
+        ```
+
+- COURSE_USER - To fill the intermediate table that relates subjects with the courses where are imparted
+
+    - GET STUDENTS OF A COURSE :angel:
+
+            GET https://schoolsapp-production.up.railway.app/api/courseusers/1
+  
+
+        This will automatically retrieve all the student that are in a course. courseId has to be passed as param
+
+    - GET COURSE OF A STUDENT :angel:
+
+            GET https://schoolsapp-production.up.railway.app/api/courseusers/infostudent/5
+  
+
+        This time studentId is passed as param and it will retrieve the course the student is studying.
+
+    - ADD STUDENT TO A COURSE :angel:
+
+            POST https://schoolsapp-production.up.railway.app/api/courseusers
+            body:
+        ``` js
+            {
+                "userId": 5,
+                "courseId": 5      
+            }
+        ```
+
+
+
 </details>
 
 ## Future features
+
+[ ] Validations over who can be parent and student are only made in frontend. Should be added in the backend.
+
+[ ] Same validation over a student and a course, only the frontend verifies that the user is a student and it also has to verify that the student is not on another course.
 
 [ ] Edit profile so each user can update their data (except email).
 

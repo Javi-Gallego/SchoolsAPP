@@ -1,0 +1,658 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "APP Schools Local",
+    "collectionId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+    "dateExported": "2024-05-12T23:28:17.087Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "682b8658-c953-4a79-bc79-cae07fdb78ca",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2024-04-21T22:48:51.420Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "8e3855e7-823e-4bbf-8628-ac3a5b901a4a",
+            "name": "Subjects",
+            "containerId": "",
+            "created": "2024-05-12T19:18:31.486Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "fd2d1415-0f15-44f2-8e20-0fd20cd3f288",
+            "name": "Users",
+            "containerId": "",
+            "created": "2024-05-12T19:36:46.040Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "13fb3591-e4bf-45fb-b44c-93d58f05769e",
+            "name": "Stages",
+            "containerId": "",
+            "created": "2024-05-12T21:09:37.303Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "178c2066-3271-4aa3-a9a1-d29f04172818",
+            "name": "Courses",
+            "containerId": "",
+            "created": "2024-05-12T21:22:49.983Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "d57ddeb1-9be4-4bea-8a71-caba3177c1c9",
+            "name": "Events",
+            "containerId": "",
+            "created": "2024-05-12T21:40:51.712Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "93dccca0-6491-4e92-a91e-7e5306249103",
+            "name": "Messages",
+            "containerId": "",
+            "created": "2024-05-12T22:10:24.807Z",
+            "sortNum": 90000
+        },
+        {
+            "_id": "23749d64-f328-4ead-89ce-82d29f80da6e",
+            "name": "Notifications",
+            "containerId": "",
+            "created": "2024-05-12T22:24:00.556Z",
+            "sortNum": 100000
+        },
+        {
+            "_id": "1e6393f5-14e7-462b-8fe6-79cc4b809501",
+            "name": "ParentStudent",
+            "containerId": "",
+            "created": "2024-05-12T22:40:29.362Z",
+            "sortNum": 110000
+        },
+        {
+            "_id": "16050712-9fe7-4192-a855-6e440db29d76",
+            "name": "CourseSubjects",
+            "containerId": "",
+            "created": "2024-05-12T22:57:47.432Z",
+            "sortNum": 120000
+        },
+        {
+            "_id": "9c7a8436-56c0-44a6-90d5-31215f8c254d",
+            "name": "CourseUser",
+            "containerId": "",
+            "created": "2024-05-12T23:19:57.923Z",
+            "sortNum": 130000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "7f694050-12cf-415d-926a-db6b5fb9a64d",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "682b8658-c953-4a79-bc79-cae07fdb78ca",
+            "name": "Login",
+            "url": "auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-12T18:34:10.808Z",
+            "modified": "2024-05-12T19:20:49.972Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"admin@gmail.com\",\n  \"password\": \"Aa123456\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTUzOTIxOSwiZXhwIjoxNzE1NjI1NjE5fQ.FmDUAiyxL9mQudcclpu_DouyEIxEjJmqRrTuqitvrZ8"
+            }
+        },
+        {
+            "_id": "a9784e1d-2e54-46f8-9d48-ae96e32c4641",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "682b8658-c953-4a79-bc79-cae07fdb78ca",
+            "name": "Register",
+            "url": "auth/register",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-12T18:36:10.219Z",
+            "modified": "2024-05-12T19:07:04.537Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"firstName\": \"Javier\",\n  \"lastName\": \"Gallego\",\n  \"secondLastName\": \"Garrido\",\n  \"birthdate\": \"1984-29-01\",\n  \"email\": \"galgar@gmail.com\",\n  \"password\": \"Aa123456\",\n  \"address\": \"Calle Rio Jarama n34\",\n  \"schoolId\": 1,\n  \"roleId\": 3\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTUzOTIxOSwiZXhwIjoxNzE1NjI1NjE5fQ.FmDUAiyxL9mQudcclpu_DouyEIxEjJmqRrTuqitvrZ8"
+            }
+        },
+        {
+            "_id": "745f77d7-e229-4e1e-a697-c2bc2615b40d",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "8e3855e7-823e-4bbf-8628-ac3a5b901a4a",
+            "name": "Get subjects",
+            "url": "subjects/1",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-05-12T19:19:11.450Z",
+            "modified": "2024-05-12T19:21:03.155Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "eb2c546e-d9b9-4ce6-a589-b1942490d1db",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "fd2d1415-0f15-44f2-8e20-0fd20cd3f288",
+            "name": "Get users",
+            "url": "users/?schoolId=1&roleName=teacher&firstName=Ja",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-05-12T19:36:56.511Z",
+            "modified": "2024-05-12T19:46:07.741Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "schoolId",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "roleName",
+                    "value": "teacher",
+                    "isPath": false
+                },
+                {
+                    "name": "firstName",
+                    "value": "Ja",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "5c537929-0832-469c-ab41-be7a99794eb7",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "8e3855e7-823e-4bbf-8628-ac3a5b901a4a",
+            "name": "Create Subject",
+            "url": "subjects",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-05-12T19:51:33.342Z",
+            "modified": "2024-05-12T20:42:01.739Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Plástica\",\n  \"schoolId\": 1\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "6a10ff43-ade3-4b93-b946-29e8671a31b2",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "8e3855e7-823e-4bbf-8628-ac3a5b901a4a",
+            "name": "Delete subject",
+            "url": "subjects/7",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2024-05-12T20:42:35.181Z",
+            "modified": "2024-05-12T20:43:08.644Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "faa4e2fb-3e74-4c3d-acf1-317bed764368",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "13fb3591-e4bf-45fb-b44c-93d58f05769e",
+            "name": "Get stages",
+            "url": "stages/1",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-05-12T21:09:46.400Z",
+            "modified": "2024-05-12T21:11:43.110Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "1dfab4d4-7ef5-4d54-bc98-fdf3d3f22ab5",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "13fb3591-e4bf-45fb-b44c-93d58f05769e",
+            "name": "Create Stage",
+            "url": "stages",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2024-05-12T21:12:50.011Z",
+            "modified": "2024-05-12T21:14:31.479Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Bachillerato\",\n  \"schoolId\": 1\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "81ff8a84-f225-4b16-b64f-36c258010fee",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "13fb3591-e4bf-45fb-b44c-93d58f05769e",
+            "name": "Update stage",
+            "url": "stages/8",
+            "method": "PUT",
+            "sortNum": 110000,
+            "created": "2024-05-12T21:14:55.214Z",
+            "modified": "2024-05-12T21:16:28.852Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Bachillerato Tecnológico\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "1d5c92fa-5afc-42cf-912b-a7d3cb9dd040",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "13fb3591-e4bf-45fb-b44c-93d58f05769e",
+            "name": "Delete stage",
+            "url": "stages/8",
+            "method": "DELETE",
+            "sortNum": 120000,
+            "created": "2024-05-12T21:18:50.370Z",
+            "modified": "2024-05-12T21:19:09.332Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "daa6811d-8907-4b89-a578-3397920acbaa",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "178c2066-3271-4aa3-a9a1-d29f04172818",
+            "name": "Get courses",
+            "url": "courses",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2024-05-12T21:23:00.418Z",
+            "modified": "2024-05-12T21:23:21.293Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "76867a1d-8002-421f-bba4-9e0d746904cd",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "178c2066-3271-4aa3-a9a1-d29f04172818",
+            "name": "Create course",
+            "url": "courses",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2024-05-12T21:27:24.769Z",
+            "modified": "2024-05-12T21:33:33.766Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"3º ESO\",\n  \"stageId\": 3,\n  \"year\": 3,\n  \"tutorId\": 13\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "aac0d433-d722-4401-812a-4ae099a9dbaf",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "178c2066-3271-4aa3-a9a1-d29f04172818",
+            "name": "Update course",
+            "url": "courses/9",
+            "method": "PUT",
+            "sortNum": 150000,
+            "created": "2024-05-12T21:35:24.757Z",
+            "modified": "2024-05-12T21:37:26.247Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"tutorId\": 12\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "f8e7be95-da52-47b7-873c-6ea096d8b8e1",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "178c2066-3271-4aa3-a9a1-d29f04172818",
+            "name": "Delete Course",
+            "url": "courses/9",
+            "method": "DELETE",
+            "sortNum": 160000,
+            "created": "2024-05-12T21:39:09.928Z",
+            "modified": "2024-05-12T21:39:29.749Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "4fd41ed7-c4a8-4787-8370-b8b1aa718a39",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "d57ddeb1-9be4-4bea-8a71-caba3177c1c9",
+            "name": "Get events",
+            "url": "events?schoolId=1&stageId=3&courseId=2",
+            "method": "GET",
+            "sortNum": 170000,
+            "created": "2024-05-12T21:42:33.901Z",
+            "modified": "2024-05-12T21:46:15.919Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "schoolId",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "stageId",
+                    "value": "3",
+                    "isPath": false
+                },
+                {
+                    "name": "courseId",
+                    "value": "2",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "b15a03f3-0493-4e43-a6a2-1f72ba5fcf7a",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "d57ddeb1-9be4-4bea-8a71-caba3177c1c9",
+            "name": "Create event",
+            "url": "events",
+            "method": "POST",
+            "sortNum": 180000,
+            "created": "2024-05-12T21:52:08.258Z",
+            "modified": "2024-05-12T22:01:24.558Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Examen\", \n  \"start\": \"2024-05-20\", \n  \"end\": \"2024-05-20\", \n  \"description\": \"Examen de Física tema 10\", \n  \"schoolId\": 1, \n  \"stageId\": 3, \n  \"courseId\": 2, \n  \"publisherId\": 11, \n  \"backgroundColor\": \"red\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "0a776c4f-ccbf-45ed-8e3d-b263f174566c",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "93dccca0-6491-4e92-a91e-7e5306249103",
+            "name": "Get messages",
+            "url": "messages",
+            "method": "GET",
+            "sortNum": 190000,
+            "created": "2024-05-12T22:10:33.990Z",
+            "modified": "2024-05-12T22:10:52.492Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "a08532d7-3bf5-42e2-a1eb-ca85f1ddd479",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "93dccca0-6491-4e92-a91e-7e5306249103",
+            "name": "Create message",
+            "url": "messages",
+            "method": "POST",
+            "sortNum": 200000,
+            "created": "2024-05-12T22:11:07.208Z",
+            "modified": "2024-05-12T22:22:09.935Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"newMessage\": \"Esto es una prueba que no va a funcionar\",\n  \"authorId\": 1,\n  \"receiverId\": 4\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "97476d2a-d0b3-440d-a9fa-7b544b4cbd6c",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "93dccca0-6491-4e92-a91e-7e5306249103",
+            "name": "Update seen message",
+            "url": "messages",
+            "method": "PUT",
+            "sortNum": 210000,
+            "created": "2024-05-12T22:13:51.826Z",
+            "modified": "2024-05-12T22:19:37.647Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId1\": 2,\n  \"userId2\": 4\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "d2ab6cd8-1c75-4310-875a-fd405bbc0131",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "23749d64-f328-4ead-89ce-82d29f80da6e",
+            "name": "Get notifications",
+            "url": "notifications/?schoolId=1",
+            "method": "GET",
+            "sortNum": 220000,
+            "created": "2024-05-12T22:24:11.059Z",
+            "modified": "2024-05-12T22:27:01.308Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "schoolId",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "9bd08157-7e62-431e-8017-33c1ceddf877",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "23749d64-f328-4ead-89ce-82d29f80da6e",
+            "name": "Create notification",
+            "url": "notifications",
+            "method": "POST",
+            "sortNum": 230000,
+            "created": "2024-05-12T22:27:18.096Z",
+            "modified": "2024-05-12T22:30:07.136Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Nueva propuesta de Menú comedor\", \n  \"message\": \"Después de estudiar nuevas propuestas de varias empresas, nos hemos decido a contar con los servicios de Delicious Foods que vendrá a preparar los menús todos los días a nuestro comedor. Se enviará más información al correo de cada padre.\", \n  \"schoolId\": 1, \n  \"publisherId\": 2\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "5a91dfef-38f9-46d5-a5f4-5dbd9f20b420",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "1e6393f5-14e7-462b-8fe6-79cc4b809501",
+            "name": "Create ParentStudent",
+            "url": "parentstudent",
+            "method": "POST",
+            "sortNum": 240000,
+            "created": "2024-05-12T22:40:39.338Z",
+            "modified": "2024-05-12T22:53:59.945Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"parentId\": 4,\n  \"studentId\": 6\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "f1e587af-3d91-42d3-bb3e-9b840faec907",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "16050712-9fe7-4192-a855-6e440db29d76",
+            "name": "Get Subjects from a Course",
+            "url": "coursesubjects/1",
+            "method": "GET",
+            "sortNum": 250000,
+            "created": "2024-05-12T22:58:03.096Z",
+            "modified": "2024-05-12T22:58:45.264Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "fca7c2a4-fe67-4bed-b222-2f01a17ad8c0",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "16050712-9fe7-4192-a855-6e440db29d76",
+            "name": "Add subject to a course",
+            "url": "coursesubjects",
+            "method": "POST",
+            "sortNum": 260000,
+            "created": "2024-05-12T23:02:46.566Z",
+            "modified": "2024-05-12T23:03:59.021Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"subjectId\": 5,\n  \"courseId\": 5\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "1d6e169a-ce10-415d-ac65-80c24a582df6",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "16050712-9fe7-4192-a855-6e440db29d76",
+            "name": "Delete subject from a course",
+            "url": "coursesubjects/",
+            "method": "DELETE",
+            "sortNum": 270000,
+            "created": "2024-05-12T23:05:23.784Z",
+            "modified": "2024-05-12T23:06:16.201Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"subjectId\": 5,\n  \"courseId\": 5\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "5c9763e2-2fd5-420b-be89-7f2694d1bcc4",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "9c7a8436-56c0-44a6-90d5-31215f8c254d",
+            "name": "Get students of a course",
+            "url": "courseusers/1",
+            "method": "GET",
+            "sortNum": 280000,
+            "created": "2024-05-12T23:20:12.274Z",
+            "modified": "2024-05-12T23:22:14.669Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "931beb04-d52f-495f-a659-c425d12b9e86",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "9c7a8436-56c0-44a6-90d5-31215f8c254d",
+            "name": "Get the course of a student",
+            "url": "courseusers/infostudent/5",
+            "method": "GET",
+            "sortNum": 290000,
+            "created": "2024-05-12T23:22:32.332Z",
+            "modified": "2024-05-12T23:22:49.076Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        },
+        {
+            "_id": "93ee76b3-2419-4528-b0e6-2292ebae8e04",
+            "colId": "a8a250a8-3db8-4d71-8c59-4fcebee8d055",
+            "containerId": "9c7a8436-56c0-44a6-90d5-31215f8c254d",
+            "name": "Add student to a course",
+            "url": "courseusers",
+            "method": "POST",
+            "sortNum": 300000,
+            "created": "2024-05-12T23:23:21.228Z",
+            "modified": "2024-05-12T23:24:39.929Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\": 5,\n  \"courseId\": 4\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IkFkbWluaXN0cmFjacOzbiIsInByb2ZpbGVQaG90byI6Ii91cGxvYWRzL3Byb2ZpbGUvdXNlcnBob3RvLnBuZyIsInNjaG9vbElkIjoxLCJyb2xlcyI6WyJhZG1pbiJdLCJzY2hvb2xMb2dvIjoiL3VwbG9hZHMvc2Nob29scy9lc2NvbGEtZWwtZHJhYy1sb2dvLnBuZyIsImNvdXJzZXMiOltdLCJjaGlsZHJlbiI6W10sImlhdCI6MTcxNTU0MTY0OSwiZXhwIjoxNzE1NjI4MDQ5fQ.B6z3HfdzbfxRgJaJcgbl1S7wCZti3KwUA1IDK3AW8qs"
+            }
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "localhost:4000/api/"
+        }
+    },
+    "ref": "H34qpXRxedDvll-1kDKQdTbuHFlBPnQJ1LYKlPeTy9gADzqarohmuZ23qNIWA9N4EV3i5gpO7sCpV9_MDcyMbQ"
+}

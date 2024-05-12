@@ -10,6 +10,7 @@ import eventRoutes from "../entities/event/event.routes";
 import messageRoutes from "../entities/message/message.routes";
 import parentStudentRoutes from "../entities/parent_student/parent_student.routes";
 import notificationRoutes from "../entities/notification/notification.routes";
+import userRolesRoutes from "../entities/user_role/user_role.routes";
 
 const router = Router();
 
@@ -17,6 +18,7 @@ router.use("/auth", authRoutes);
 // router.use("/schools", schoolRoutes);
 // router.use("/roles", roleRoutes);
 router.use("/users", userRoutes);
+router.use("/usersroles", userRolesRoutes);
 router.use("/parentstudent", parentStudentRoutes);
 router.use("/stages", stageRoutes);
 router.use("/subjects", subjectRoutes);

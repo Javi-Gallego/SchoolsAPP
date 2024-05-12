@@ -10,6 +10,10 @@ import { ValidationError } from "../../utils/handleError";
 export const getCourseSubjectsService = async (req: Request) => {
   const courseId = parseInt(req.params.courseId);
 
+  if (!courseId) {
+    throw new ValidationError("Course id is required");
+  }
+
   const courseSubjects = getCourseSubjectsRepository(courseId);
 
   return courseSubjects;
@@ -18,6 +22,10 @@ export const getCourseSubjectsService = async (req: Request) => {
 export const createCourseSubjectService = async (req: Request) => {
   const courseId = parseInt(req.body.courseId);
   const subjectId = parseInt(req.body.subjectId);
+
+  if (!courseId || !subjectId) {
+    throw new ValidationError("CourseId and subjectIa are required");
+  }
 
   const courseSubjectExists = await existsCourseSubjectsRepository(
     courseId,
@@ -36,6 +44,10 @@ export const createCourseSubjectService = async (req: Request) => {
 export const deleteCourseSubjectService = async (req: Request) => {
   const courseId = req.body.courseId;
   const subjectId = req.body.subjectId;
+
+  if (!courseId || !subjectId) {
+    throw new ValidationError("CourseId and subjectId are required");
+  }
 
   const existsCourseSubject = await existsCourseSubjectsRepository(
     courseId,
