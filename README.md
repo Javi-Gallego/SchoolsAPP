@@ -135,7 +135,7 @@ When an endpoint needs authentication you must put the token given to you when y
 </details>
 
 ## DB diagram
-!['imagen-db'](./img/DB_relations.JPG)
+<center><img src="./public/DB.jpg"/></center>
 
 ## Endpoints
 
@@ -314,7 +314,7 @@ When an endpoint needs authentication you must put the token given to you when y
 
 - EVENTS
 
-    - GET EVENTS :angel:
+    - GET EVENTS :man:
 
             GET https://schoolsapp-production.up.railway.app/api/events?schoolId=1&stageId=3&courseId=2
   
@@ -323,17 +323,59 @@ When an endpoint needs authentication you must put the token given to you when y
 
         It will retrieve automatically all the events of the present year since January 1th
 
-    - CREATE EVENT :angel:
+    - CREATE EVENT :man:
 
             POST https://schoolsapp-production.up.railway.app/api/events
             body:
         ``` js
             {
-                "name": "Química",
-                "schoolId": 1  
+                "title": "Examen", 
+                "start": "2024-05-21", 
+                "end": "2024-05-21", 
+                "description": "Examen de Física tema 11", 
+                "schoolId": 1, 
+                "stageId": 3, 
+                "courseId": 2, 
+                "publisherId": 11, 
+                "backgroundColor": "red" 
             }
         ```
 
+- MESSAGES
+
+    - GET MESSAGES :earth_africa:
+
+            GET https://schoolsapp-production.up.railway.app/api/messages
+  
+
+        It will automatically retrieve all messages that the userId of the token has.
+
+    - CREATE MESSAGE :earth_africa:
+
+            POST https://schoolsapp-production.up.railway.app/api/messages
+            body:
+        ``` js
+            {
+                "newMessage": "Esto es una prueba que no va a funcionar",
+                "authorId": 2,
+                "receiverId": 4
+            }
+        ```
+
+        IF authorId doesnt match userId of the token, the message will not be created.
+
+        
+    - UPDATE MESSAGE :earth_africa:
+
+            POST https://schoolsapp-production.up.railway.app/api/messages
+            body:
+        ``` js
+            {
+                "userId1": 2,
+                "userId2": 4
+            }
+        ```
+    This will automatically update the messages and put them as already seen. userId1 es the one who updates messages in which userId2 is the author and userId1 the receiver.
  
 </details>
 

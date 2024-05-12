@@ -67,6 +67,10 @@ export const getMessagesService = async (req: Request) => {
 export const createMessageService = async (req: Request) => {
   const { newMessage, authorId, receiverId } = req.body;
 
+  if (authorId !== req.tokenData.userId) {
+    throw new ValidationError("You are not allowed to send messages as another user");
+  }
+
   const message = createMessageRepository(newMessage, authorId, receiverId);
 
   return message;

@@ -44,6 +44,10 @@ export const getEventsService = async (req: Request) => {
 export const createEventService = async (req: Request) => {
   const { title, start, end, description, schoolId, stageId, courseId, publisherId, backgroundColor } = req.body;
 
+  if (!title || !start || !end || !schoolId || !stageId || !courseId || !publisherId || !backgroundColor) {
+    throw new Error("Missing required fields");
+  }
+  
   const event = await createEventRepository(title, start, end, description, schoolId, stageId, courseId, publisherId, backgroundColor);
 
   return event;

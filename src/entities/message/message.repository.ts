@@ -18,14 +18,7 @@ export const createMessageRepository = async (
   authorId: number,
   receiverId: number
 ) => {
-  console.log(
-    "message: ",
-    newMessage,
-    "autor: ",
-    authorId,
-    "receiver: ",
-    receiverId
-  );
+
   const message = Message.create({
     message: newMessage,
     authorId,
@@ -44,7 +37,7 @@ export const updateMessageRepository = async (userId1: number, userId2: number) 
         { authorId: userId2, receiverId: userId1 },
         ],
     });
-    console.log("messages: ", messages);
+
     messages.forEach(async (message) => {
         message.seenReceiver = true;
         await message.save();
