@@ -48,9 +48,8 @@ export class Notifications1713626917066 implements MigrationInterface {
           },
           {
             name: "viewers",
-            type: "simple-array",
-            isNullable: false,
-            default: "",
+            type: "text",
+            isNullable: true,
           },
           {
             name: "created_at",

@@ -28,7 +28,7 @@ export class Notification extends BaseEntity{
     @Column({ name: "school_id"})
     schoolId!: number
 
-    @Column({ name: "viewers", type: "simple-array", default: ""})
+    @Column({ name: "viewers", type: "text"})
     viewers!: string[]
 
     @Column({ name: "created_at", default: () => "CURRENT_TIMESTAMP", select: false})
