@@ -14,6 +14,9 @@ export const getCoursesService = async (req: Request) => {
 export const createCourseService = async (req: Request) => {
   const { name, stageId, year, tutorId } = req.body;
   
+  if(!name || !stageId || !year) {
+    throw new ValidationError("Please provide all the required fields");
+  }
   const nameExists = await Course.findOne({ where: { name: name } });
   if (nameExists) {
     throw new ValidationError("Course already exists");

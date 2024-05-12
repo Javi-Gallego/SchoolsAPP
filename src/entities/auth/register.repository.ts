@@ -7,7 +7,6 @@ export const emailInUse = async (email: string) => {
     });
 
     if (isUser) {
-      console.log("Email in use");
       throw new ValidationError("Email already in use");
     }
 };

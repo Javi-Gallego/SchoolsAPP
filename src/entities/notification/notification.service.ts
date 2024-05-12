@@ -13,7 +13,7 @@ export interface NotificationFilter {
 
 export const getNotificationsService = async (req: Request) => {
   const queryFilter: NotificationFilter = {} as NotificationFilter;
-console.log(req.query);
+
   if (!req.query.schoolId) {
     throw new ValidationError("SchoolId must be selected");
   }
@@ -35,7 +35,7 @@ console.log(req.query);
 
 export const createNotificationService = async (req: Request) => {
   const { title, message, schoolId, stageId, courseId, publisherId } = req.body;
-  console.log(req.body);
+
   if (!title || !message || !schoolId || !publisherId) {
     throw new ValidationError("Missing fields");
   }

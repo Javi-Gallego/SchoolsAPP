@@ -39,21 +39,19 @@ async function sendRegisterEmail(email: string, name: string, password: string) 
 
   try {
     const response = await request;
-    console.log(response.body);
+
   } catch (error) {
     console.log(error);
   }
 }
 
 export const getRegisterService = async (req: Request) => {
-
   const { firstName, lastName, secondLastName, birthdate, phone,
-    address, email, password, schoolId, roleId } = req.body.userData;
-
+    address, email, password, schoolId, roleId } = req.body;
+    
   if ( !firstName || !lastName || !secondLastName || !birthdate || !address ||
     !email || !password || !schoolId
   ) {
-
     throw new ValidationError("All the fields are required");
   }
 
@@ -95,9 +93,9 @@ export const getRegisterService = async (req: Request) => {
     throw new ValidationError("User not created");
   }
 
-  const userRole = await createUserRole(newUser.id, roleId);
-  console.log("a enviar el mail: ", email, " ", firstName, " ", password)
+  await createUserRole(newUser.id, roleId);
+
   await sendRegisterEmail(email, firstName, password);
-console.log("después de enviar el mail")
+
   return newUser;
 };
