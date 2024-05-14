@@ -30,14 +30,14 @@ export const getEventsService = async (req: Request) => {
     queryFilter.schoolId = parseInt(req.query.schoolId);
   }
 
-  if (req.query.limitDate ) {
+  if (req.query.limitDate === "true") {
     queryFilter.date = MoreThanOrEqual(new Date());
   } else {
     queryFilter.date = MoreThanOrEqual(new Date(FirstDayOfYear));
   }
 
   const events = await getEventsRepository(queryFilter);
-
+console.log([1,2,3].reduce((acc, curr) => acc + curr, 10));
   return events;
 };
 
