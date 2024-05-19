@@ -37,7 +37,7 @@ export const getEventsService = async (req: Request) => {
   }
 
   const events = await getEventsRepository(queryFilter);
-console.log([1,2,3].reduce((acc, curr) => acc + curr, 10));
+
   return events;
 };
 
