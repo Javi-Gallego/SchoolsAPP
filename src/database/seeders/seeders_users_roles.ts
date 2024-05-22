@@ -65,6 +65,36 @@ export const userRoleSeedDatabase = async () => {
     userRole12.userId = 9;
     await userRole12.save();
 
+    const userRole13 = new UserRole();
+    userRole13.roleId = 6;
+    userRole13.userId = 15;
+    await userRole13.save();
+
+    const userRole14 = new UserRole();
+    userRole14.roleId = 6;
+    userRole14.userId = 16;
+    await userRole14.save();
+
+    const userRole15 = new UserRole();
+    userRole15.roleId = 5;
+    userRole15.userId = 17;
+    await userRole15.save();
+
+    const userRole16 = new UserRole();
+    userRole16.roleId = 6;
+    userRole16.userId = 18;
+    await userRole16.save();
+
+    const userRole17 = new UserRole();
+    userRole17.roleId = 6;
+    userRole17.userId = 19;
+    await userRole17.save();
+
+    const userRole18 = new UserRole();
+    userRole18.roleId = 5;
+    userRole18.userId = 20;
+    await userRole18.save();
+
     console.log("--------------------------------------------------");
     console.log("-------- user_roles created successfully ---------");
     console.log("--------------------------------------------------");
